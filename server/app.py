@@ -87,7 +87,7 @@ ui_app = StaticFiles(directory="client/dist", html=True)
 api_app = FastAPI()
 
 
-@app.get("/dados")
+@api_app.get("/dados")
 def get_dados():
     # Converte o DataFrame para uma lista de dicionários (records)
     dados = df.to_dict(orient="records")
