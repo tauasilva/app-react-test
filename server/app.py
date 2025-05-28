@@ -52,9 +52,12 @@ def ReturnIndicadores() -> pd.DataFrame:
         round(sum(vl_realizado)) as faturado,
         round(sum(vl_meta)) as meta,
         round(sum(case when ds_canal_faturado = 'Franquias' then vl_realizado else 0 end )) as franquias,
-        round(sum(case when ds_canal_faturado = 'Loja Própria' then vl_realizado else 0 end )) as loja_propria,
-        round(sum(case when ds_canal_faturado = 'Outlet' then vl_realizado else 0 end )) as outlet,
-        round(sum(case when ds_canal_faturado = 'E-commerce' then vl_realizado else 0 end )) as ecommerce
+        round(sum(case when ds_canal_faturado in ('Loja Própria','Outlet')then vl_realizado else 0 end )) as loja_propria,
+        round(sum(case when ds_canal_faturado = 'E-commerce' then vl_realizado else 0 end )) as ecommerce,
+
+        round(sum(case when ds_canal_faturado = 'Franquias' then vl_meta else 0 end )) as franquias_meta,
+        round(sum(case when ds_canal_faturado in ('Loja Própria','Outlet') then vl_meta else 0 end )) as loja_propria_meta,
+        round(sum(case when ds_canal_faturado = 'E-commerce' then vl_meta else 0 end )) as ecommerce_meta
         from
         sellout.refined.tb_fat_sellout_monitoria_dia_atual
         where dt_meta = current_date()
