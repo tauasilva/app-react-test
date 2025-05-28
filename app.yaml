@@ -5,3 +5,6 @@ command:
   - "2"
   - "--worker-class"
   - "uvicorn.workers.UvicornWorker"
+env:
+  - name: "DATABRICKS_WAREHOUSE_ID"
+    valueFrom: "sql-warehouse"
