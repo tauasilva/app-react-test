@@ -3,17 +3,18 @@ from typing import Annotated, Any
 from fastapi import Depends, FastAPI
 from pydantic import BaseModel, ValidationError
 import os
+import pandas as pd
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from databricks.sdk import WorkspaceClient
 from fastapi.responses import JSONResponse
+from databricks import sql as databricks_sql
 from databricks.sdk.service.serving import (
     ChatMessage,
     ChatMessageRole,
 )
-import pandas as pd
-from dotenv import load_dotenv
-
+from databricks.sdk.core import Config
+from decimal import Decimal
 # Set up logging
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
@@ -26,12 +27,14 @@ load_dotenv()
 # Ensure environment variable is set correctly
 assert os.getenv('DATABRICKS_WAREHOUSE_ID'), "DATABRICKS_WAREHOUSE_ID must be set in app.yaml."
 
+
+
 def sqlQuery(query: str) -> pd.DataFrame:
     """Execute a SQL query and return the result as a pandas DataFrame."""
     cfg = Config()  # Pull environment variables for auth
-    with sql.connect(
+    with databricks_sql.connect(
         server_hostname=cfg.host,
-        http_path=f"/sql/1.0/warehouses/{os.getenv('DATABRICKS_WAREHOUSE_ID')}",
+        http_path=f"/sql/1.0/warehouses/{'c5949812aaa6e66d'}",
         credentials_provider=lambda: cfg.authenticate
     ) as connection:
         with connection.cursor() as cursor:
@@ -47,12 +50,12 @@ def ReturnIndicadores() -> pd.DataFrame:
 
     sql = '''
         select
-        sum(vl_realizado) as faturado,
-        sum(vl_meta) as meta,
-        sum(case when ds_canal_faturado = 'Franquias' then vl_realizado else 0 end ) as franquias,
-        sum(case when ds_canal_faturado = 'Loja Própria' then vl_realizado else 0 end ) as loja_propria,
-        sum(case when ds_canal_faturado = 'Outlet' then vl_realizado else 0 end ) as outlet,
-        sum(case when ds_canal_faturado = 'E-commerce' then vl_realizado else 0 end ) as ecommerce
+        round(sum(vl_realizado)) as faturado,
+        round(sum(vl_meta)) as meta,
+        round(sum(case when ds_canal_faturado = 'Franquias' then vl_realizado else 0 end )) as franquias,
+        round(sum(case when ds_canal_faturado = 'Loja Própria' then vl_realizado else 0 end )) as loja_propria,
+        round(sum(case when ds_canal_faturado = 'Outlet' then vl_realizado else 0 end )) as outlet,
+        round(sum(case when ds_canal_faturado = 'E-commerce' then vl_realizado else 0 end )) as ecommerce
         from
         sellout.refined.tb_fat_sellout_monitoria_dia_atual
         where dt_meta = current_date()
@@ -66,8 +69,13 @@ def ReturnIndicadores() -> pd.DataFrame:
         print(f"Data shape: {data.shape}")
         print(f"Data columns: {data.columns}")
 
-        dados = data.to_dict(orient="records")
-        
+        dados = data.astype(object).where(pd.notnull(data), None)
+
+        for col in dados.select_dtypes(include='object'):
+            dados[col] = dados[col].apply(lambda x: float(x) if isinstance(x, Decimal) else x)
+
+        dados = dados.to_dict(orient="records")
+        print(dados)
         return JSONResponse(content=dados)      
 
     except Exception as e:
