@@ -24,7 +24,7 @@ load_dotenv()
 
 
 app = FastAPI()
-ui_app = StaticFiles(directory="client/build", html=True)
+ui_app = StaticFiles(directory="client/dist", html=True)
 api_app = FastAPI()
 
 # PLEASE NOTE THE ORDER OF THE MOUNTS MATTERS
