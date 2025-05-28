@@ -90,7 +90,7 @@ api_app = FastAPI()
 @api_app.get("/dados")
 def get_dados():
     # Converte o DataFrame para uma lista de dicionários (records)
-    dados = df.to_dict(orient="records")
+    # dados = df.to_dict(orient="records")
     return ReturnIndicadores()
 
 
