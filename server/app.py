@@ -102,8 +102,9 @@ def read_hello():
 
 
 # PLEASE NOTE THE ORDER OF THE MOUNTS MATTERS
-app.mount("/", ui_app)
+
 app.mount("/api", api_app)
+app.mount("/", ui_app)
 
 origins = [
     "http://localhost:3000",
