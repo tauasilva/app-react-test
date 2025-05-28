@@ -11,6 +11,7 @@ from databricks.sdk.service.serving import (
     ChatMessage,
     ChatMessageRole,
 )
+import pandas as pd
 from dotenv import load_dotenv
 
 # Set up logging
