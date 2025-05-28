@@ -6,6 +6,7 @@ import os
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from databricks.sdk import WorkspaceClient
+from fastapi.responses import JSONResponse
 from databricks.sdk.service.serving import (
     ChatMessage,
     ChatMessageRole,
