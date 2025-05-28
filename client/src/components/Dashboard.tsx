@@ -9,7 +9,7 @@ import { SalesChart } from './SalesChart';
 const brands = ['AREZZO', 'SCHUTZ', 'ANACAPRI', 'VANS', 'ALEXANDRE BIRMAN'];
 
 const formatK = (value: number) => {
-  return `R$ ${(value / 1000000).toFixed(1)}MM`;
+  return `R$ ${(value / 100000000).toFixed(1)}MM`;
 };
 
 const Dashboard = () => {
