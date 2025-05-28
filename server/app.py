@@ -24,7 +24,7 @@ logger.info("Logger initialized successfully!")
 
 
 # Ensure environment variable is set correctly
-assert os.getenv('DATABRICKS_WAREHOUSE_ID'), "DATABRICKS_WAREHOUSE_ID must be set in app.yaml."
+assert os.getenv('DATABRICKS_WAREHOUSE_ID'), "c5949812aaa6e66d"
 
 
 
