@@ -1,24 +1,51 @@
 
-import React from 'react';
+
+
+import React, { useEffect, useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, ResponsiveContainer, Area, AreaChart } from 'recharts';
 
-const data = [
-  { name: 'Jan', vendas: 45000, pedidos: 320 },
-  { name: 'Fev', vendas: 52000, pedidos: 380 },
-  { name: 'Mar', vendas: 48000, pedidos: 350 },
-  { name: 'Abr', vendas: 61000, pedidos: 420 },
-  { name: 'Mai', vendas: 55000, pedidos: 390 },
-  { name: 'Jun', vendas: 67000, pedidos: 480 },
-  { name: 'Jul', vendas: 72000, pedidos: 520 },
-  { name: 'Ago', vendas: 69000, pedidos: 490 },
-  { name: 'Set', vendas: 76000, pedidos: 550 },
-  { name: 'Out', vendas: 82000, pedidos: 590 },
-  { name: 'Nov', vendas: 88000, pedidos: 630 },
-  { name: 'Dez', vendas: 95000, pedidos: 680 },
-];
-
 export const SalesChart = () => {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const data_ = [
+    { name: 'Jan', vendas: 45000, pedidos: 320 },
+    { name: 'Fev', vendas: 52000, pedidos: 380 },
+    { name: 'Mar', vendas: 48000, pedidos: 350 },
+    { name: 'Abr', vendas: 61000, pedidos: 420 },
+    { name: 'Mai', vendas: 55000, pedidos: 390 },
+    { name: 'Jun', vendas: 67000, pedidos: 480 },
+    { name: 'Jul', vendas: 72000, pedidos: 520 },
+    { name: 'Ago', vendas: 69000, pedidos: 490 },
+    { name: 'Set', vendas: 76000, pedidos: 550 },
+    { name: 'Out', vendas: 82000, pedidos: 590 },
+    { name: 'Nov', vendas: 88000, pedidos: 630 },
+    { name: 'Dez', vendas: 95000, pedidos: 680 },
+  ];
+
+
+
+  useEffect(() => {
+    const fetchSalesData = async () => {
+      try {
+        const response = await fetch('https://app-react-test-3879198595418316.aws.databricksapps.com/api/vendahorahora');
+        const jsonData = await response.json();
+        setData(jsonData);
+      } catch (error) {
+        console.error('Erro ao buscar dados de vendas:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchSalesData();
+  }, []);
+
+  if (loading) {
+    return <p className="text-slate-400 text-sm">Carregando dados...</p>;
+  }
+
   return (
     <Card className="bg-slate-800 border-slate-700">
       <CardHeader>
@@ -40,15 +67,8 @@ export const SalesChart = () => {
                 </linearGradient>
               </defs>
               <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
-              <XAxis 
-                dataKey="name" 
-                stroke="#9ca3af"
-                fontSize={12}
-              />
-              <YAxis 
-                stroke="#9ca3af"
-                fontSize={12}
-              />
+              <XAxis dataKey="hora" stroke="#9ca3af" fontSize={12} />
+              <YAxis stroke="#9ca3af" fontSize={12} />
               <Area 
                 type="monotone" 
                 dataKey="vendas" 
@@ -58,7 +78,7 @@ export const SalesChart = () => {
               />
               <Line 
                 type="monotone" 
-                dataKey="pedidos" 
+                dataKey="metas" 
                 stroke="#3b82f6" 
                 strokeWidth={3}
                 dot={{ fill: '#3b82f6', strokeWidth: 2, r: 4 }}
