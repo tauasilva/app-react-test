@@ -47,7 +47,7 @@ def ReturnIndicadoresHoraHora() -> pd.DataFrame:
 
     sql = '''
         select
-        hr_hora as hora,
+        hr_venda as hora,
         round(sum(vl_acumulado_vendas)) as vendas,
         round(sum(vl_meta_proporcional)) as metas
         from
