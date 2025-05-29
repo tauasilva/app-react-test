@@ -37,6 +37,7 @@ def sqlQuery(query: str) -> pd.DataFrame:
         credentials_provider=lambda: cfg.authenticate
     ) as connection:
         with connection.cursor() as cursor:
+            cursor.execute("SET TIMEZONE = 'America/Sao_Paulo'")
             cursor.execute(query)
             return cursor.fetchall_arrow().to_pandas()
 
@@ -46,7 +47,6 @@ def ReturnIndicadoresHoraHora() -> pd.DataFrame:
 
 
     sql = '''
-        SET TIME ZONE 'America/Sao_Paulo';
         select
         hr_venda as hora,
         round(sum(vl_acumulado_vendas)) as vendas,
@@ -84,7 +84,6 @@ def ReturnIndicadores() -> pd.DataFrame:
 
 
     sql = '''
-        SET TIME ZONE 'America/Sao_Paulo';
         select
         round(sum(vl_realizado)) as faturado,
         round(sum(vl_meta)) as meta,
