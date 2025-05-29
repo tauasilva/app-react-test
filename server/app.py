@@ -84,6 +84,7 @@ def ReturnIndicadores() -> pd.DataFrame:
 
 
     sql = '''
+        SET TIME ZONE 'America/Sao_Paulo';
         select
         round(sum(vl_realizado)) as faturado,
         round(sum(vl_meta)) as meta,
