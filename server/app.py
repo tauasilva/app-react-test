@@ -46,6 +46,7 @@ def ReturnIndicadoresHoraHora() -> pd.DataFrame:
 
 
     sql = '''
+        SET TIME ZONE 'America/Sao_Paulo';
         select
         hr_venda as hora,
         round(sum(vl_acumulado_vendas)) as vendas,
