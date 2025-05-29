@@ -37,7 +37,7 @@ def sqlQuery(query: str) -> pd.DataFrame:
         credentials_provider=lambda: cfg.authenticate
     ) as connection:
         with connection.cursor() as cursor:
-            cursor.execute("SET TIMEZONE = 'America/Sao_Paulo'")
+            cursor.execute("SET TIME ZONE 'America/Sao_Paulo';")
             cursor.execute(query)
             return cursor.fetchall_arrow().to_pandas()
 
