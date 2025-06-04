@@ -26,9 +26,6 @@ export const SalesChart = ({dataHoraHora}) => {
   return horaA !== horaB ? horaA - horaB : minutoA - minutoB;
 });
 
-  console.log('hora hora')
-  console.log(data)
-
   return (
     <Card className="bg-slate-800 border-slate-700">
       <CardHeader>

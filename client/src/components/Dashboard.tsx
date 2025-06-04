@@ -22,25 +22,19 @@ const Dashboard = () => {
   const [kpis, setKpis] = useState<any | null>(null);
   const [carregando, setCarregando] = useState(true);
 
-
-  const brandData = []
-
-
   useEffect(() => {
     const fetchKpis = async () => {
       try {
         const response = await fetch(`https://app-react-test-3879198595418316.aws.databricksapps.com/api/dados`);
         const data = await response.json();
-        console.log(data)
+
         setKpis(data);
       } catch (error) {
         console.error('Erro ao buscar os KPIs:', error);
         const data = dataExample
-        console.log(`data --> ${data}`)
-        console.log(data)
+
         setKpis(data);
-        console.log(`KPIS --> ${kpis}`)
-        console.log(kpis)
+
         setCarregando(false);
       } finally {
         setCarregando(false);
@@ -81,7 +75,7 @@ const Dashboard = () => {
         <div className="mb-8">
           <h2 className="text-xl font-semibold mb-6 text-white">Performance por Marca</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            {kpis.MARCAS.map((brand, index) => (
+            {kpis.MARCAS.sort((a, b) => b.faturado - a.faturado).map((brand, index) => (
               <BrandCard data={brand} />
             ))}
           </div>
@@ -101,7 +95,9 @@ const Dashboard = () => {
 
         {/* Metrics Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-8">
-          {kpis.INDICADORES_GERAIS.map((metric, index) => (
+          {
+          
+          kpis.INDICADORES_GERAIS.map((metric, index) => (
             <MetricsCard data={metric} />
           ))}
         </div>

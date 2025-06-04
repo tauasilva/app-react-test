@@ -5,6 +5,7 @@ import { TrendingUp, TrendingDown } from 'lucide-react';
 
 
 export const BrandCard = ({ data }) => {
+  
 
   const progressPercentageMeta = (data.faturado / data.meta) * 100;
   const progressPercentageLy = (data.faturado / data.faturado_ly) * 1
