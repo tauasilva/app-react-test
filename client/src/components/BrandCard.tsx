@@ -41,11 +41,11 @@ export const BrandCard = ({ data }) => {
 
         <div className="mb-3">
           <div className="text-2xl font-bold text-white mb-1">
-            R$ {data.faturado}K
+            R$ {(data.faturado/1000000).toFixed(1)}MM
           </div>
           <div className="flex items-center space-x-2 text-sm">
             <span className="text-slate-400">LY</span>
-            <span className="text-slate-300">R$ {data.faturado_ly}K</span>
+            <span className="text-slate-300">R$ {(data.faturado_ly/1000000).toFixed(1)}MM</span>
           </div>
         </div>
 

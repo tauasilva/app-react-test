@@ -111,7 +111,7 @@ const Dashboard = () => {
         {/* Charts and Tables */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <div className="xl:col-span-3">
-            <SalesChart />
+            <SalesChart dataHoraHora={kpis.HORA_HORA} />
           </div>
           <div>
           </div>

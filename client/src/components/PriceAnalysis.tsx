@@ -6,6 +6,11 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer, Toolti
 
 export const PriceAnalysis = ({data}) => {
 
+  const chartData_teste = data.dias.map(item => ({
+    day: item.day,
+    fullPrice: item.fullprice,
+    markdown: item.markdown
+  }));
 
   const total = data.indicadores.Sellout_fp + data.indicadores.Sellout_md
   const percentMd = (data.indicadores.Sellout_md*100)/total
@@ -15,30 +20,32 @@ export const PriceAnalysis = ({data}) => {
   const percentMd_ly = (data.indicadores.Sellout_md_ly*100)/total
   const percentFp_ly = (data.indicadores.Sellout_fp_ly*100)/total 
 
+  const [selectedPeriod, setSelectedPeriod] = useState('Diária');
+
   return (
     <div className="mb-8">
-      <Card className="bg-slate-800 border-slate-700 mb-8 ">
+      <Card className="bg-slate-800 border-slate-700">
         <CardHeader>
           <CardTitle className="text-white">Full Price x Markdown</CardTitle>
         </CardHeader>
         <CardContent>
           {/* Header com totais */}
           <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-6">
-            <div className="md:col-span-2 bg-slate-900 p-4 rounded-lg">
+            <div className=" bg-slate-900 p-4 rounded-lg">
               <div className="text-slate-400 text-sm mb-1">Sellout acumulado Full Price</div>
-              <div className="text-2xl font-bold text-white mb-1">R$ {data.indicadores.Sellout_fp}</div>
+              <div className="text-2xl font-bold text-white mb-1">R$ {(data.indicadores.Sellout_fp/1000000).toFixed(1)}MM</div>
               <div className="flex items-center space-x-2">
                 <span className="text-slate-400 text-xs">LY</span>
-                <span className="text-slate-300 text-xs">R$ {data.indicadores.Sellout_fp_ly}</span>
+                <span className="text-slate-300 text-xs">R$ {(data.indicadores.Sellout_fp_ly/1000000).toFixed(1)}MM</span>
               </div>
             </div>
             
             <div className="bg-slate-900 p-4 rounded-lg">
               <div className="text-slate-400 text-sm mb-1">Sellout acumulado Markdown</div>
-              <div className="text-2xl font-bold text-white mb-1">R$ {data.indicadores.Sellout_md}</div>
+              <div className="text-2xl font-bold text-white mb-1">R$ {(data.indicadores.Sellout_md/1000000).toFixed(1)}MM</div>
               <div className="flex items-center space-x-2">
                 <span className="text-slate-400 text-xs">LY</span>
-                <span className="text-slate-300 text-xs">R$ {data.indicadores.Sellout_fp_ly}</span>
+                <span className="text-slate-300 text-xs">R$ {(data.indicadores.Sellout_md_ly/1000000).toFixed(1)}MM</span>
               </div>
             </div>
             
@@ -61,11 +68,10 @@ export const PriceAnalysis = ({data}) => {
             </div>
           </div>
 
-
           {/* Gráfico */}
           <div className="h-80">
             <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={data.dias} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+              <BarChart data={chartData_teste} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
                 <XAxis 
                   dataKey="day" 

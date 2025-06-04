@@ -1,102 +1,901 @@
-{"KPIS": {"faturado": 5166075,
-  "faturado_ly": 8317471,
-  "faturado_mtd": 15313470,
-  "faturado_mtd_ly": 14582925,
-  "meta": 10869384,
-  "meta_mtd": 16630315,
-  "franquias": 2614363,
-  "franquias_meta": 5977796,
-  "loja_propria": 638532,
-  "loja_propria_meta": 1286726,
-  "outlet": 134018,
-  "outlet_meta": 264677,
-  "ecommerce": 1779162,
-  "ecommerce_meta": 3340185},
- "MARCAS": [{"marca": "BRIZZA AREZZO",
-   "faturado": 21587,
-   "faturado_ly": 30651,
-   "meta": 31466},
-  {"marca": "VANS",
-   "faturado": 736425,
-   "faturado_ly": 1550565,
-   "meta": 1653600},
-  {"marca": "AREZZO",
-   "faturado": 2808530,
-   "faturado_ly": 4264012,
-   "meta": 6131698},
-  {"marca": "VICENZA", "faturado": 39875, "faturado_ly": 55826, "meta": 85207},
-  {"marca": "ALEXANDRE BIRMAN",
-   "faturado": 200763,
-   "faturado_ly": 308360,
-   "meta": 444209},
-  {"marca": "ALME", "faturado": 574, "faturado_ly": 3801, "meta": 2446},
-  {"marca": "ANACAPRI",
-   "faturado": 612175,
-   "faturado_ly": 920229,
-   "meta": 1123854},
-  {"marca": "SCHUTZ",
-   "faturado": 746146,
-   "faturado_ly": 1184028,
-   "meta": 1396903}],
- "INDICADORES_GERAIS": [{"indicador": "Sell Out MTD",
-   "valor": 15313470,
-   "meta": 16630315,
-   "valor_ly": 14582925},
-  {"indicador": "Total Franquias",
-   "valor": 7241635,
-   "meta": 7955612,
-   "valor_ly": 7135356},
-  {"indicador": "Total LP",
-   "valor": 2935965,
-   "meta": 2931841,
-   "valor_ly": 2401695},
-  {"indicador": "Total E-commerce",
-   "valor": 5135870,
-   "meta": 5742862,
-   "valor_ly": 5045874}],
- "TOP_OPERADORES": [{"operador": "TITTO MOTTA",
-   "faturado": 409804,
-   "meta": 368594,
-   "tickets": 879},
-  {"operador": "TUTA E RUBINHO",
-   "faturado": 224382,
-   "meta": 234202,
-   "tickets": 449},
-  {"operador": "ALEXANDRE SARAFIAN",
-   "faturado": 206498,
-   "meta": 168365,
-   "tickets": 435},
-  {"operador": "MAIRA SILVA",
-   "faturado": 197720,
-   "meta": 215889,
-   "tickets": 584},
-  {"operador": "REVECA REGUEIRA",
-   "faturado": 166338,
-   "meta": 169439,
-   "tickets": 412},
-  {"operador": "ALBERI JUNIOR",
-   "faturado": 150436,
-   "meta": 169881,
-   "tickets": 320},
-  {"operador": "ALDESSON PORTO",
-   "faturado": 138548,
-   "meta": 185414,
-   "tickets": 399},
-  {"operador": "ROSIRIS M G M FARIAS",
-   "faturado": 127531,
-   "meta": 97468,
-   "tickets": 265},
-  {"operador": "VALERIA FEIJO",
-   "faturado": 126315,
-   "meta": 151565,
-   "tickets": 307},
-  {"operador": "GABRIEL CASA",
-   "faturado": 116474,
-   "meta": 128976,
-   "tickets": 239}],
- "fullprice_markdown": {"indicadores": {"Sellout_fp": 10845717,
-   "Sellout_fp_ly": 10806242,
-   "Sellout_md": 4467753,
-   "Sellout_md_ly": 3776683},
-  "dias": [{"day": 2, "fullprice": 5833413, "markdown": 2318944},
-   {"day": 1, "fullprice": 5012304, "markdown": 2148809}]}}
+{
+    "KPIS": {
+        "faturado": 6699023,
+        "faturado_ly": 9921498,
+        "faturado_mtd": 24282006,
+        "faturado_mtd_ly": 24504423,
+        "meta": 11515603,
+        "meta_mtd": 27501382,
+        "franquias": 3528724,
+        "franquias_meta": 6537827,
+        "loja_propria": 901595,
+        "loja_propria_meta": 1443389,
+        "outlet": 173996,
+        "outlet_meta": 264574,
+        "ecommerce": 2094708,
+        "ecommerce_meta": 3269813
+    },
+    "MARCAS": [
+        {
+            "marca": "BRIZZA AREZZO",
+            "faturado": 22728,
+            "faturado_ly": 28437,
+            "meta": 30798
+        },
+        {
+            "marca": "VANS",
+            "faturado": 1001615,
+            "faturado_ly": 1598366,
+            "meta": 1682289
+        },
+        {
+            "marca": "AREZZO",
+            "faturado": 3586569,
+            "faturado_ly": 5604418,
+            "meta": 6427421
+        },
+        {
+            "marca": "VICENZA",
+            "faturado": 32239,
+            "faturado_ly": 49501,
+            "meta": 89105
+        },
+        {
+            "marca": "ALEXANDRE BIRMAN",
+            "faturado": 296310,
+            "faturado_ly": 434679,
+            "meta": 486497
+        },
+        {
+            "marca": "ANACAPRI",
+            "faturado": 823626,
+            "faturado_ly": 918608,
+            "meta": 1268638
+        },
+        {
+            "marca": "SCHUTZ",
+            "faturado": 935541,
+            "faturado_ly": 1283489,
+            "meta": 1528409
+        }
+    ],
+    "INDICADORES_GERAIS": [
+        {
+            "indicador": "Sell Out MTD",
+            "valor": 24.3,
+            "meta": 27.5,
+            "valor_ly": 24.5,
+            "tipo": "MM"
+        },
+        {
+            "indicador": "Total Franquias",
+            "valor": 11.9,
+            "meta": 13.9,
+            "valor_ly": 12.7,
+            "tipo": "MM"
+        },
+        {
+            "indicador": "Total LP",
+            "valor": 4.4,
+            "meta": 4.5,
+            "valor_ly": 3.8,
+            "tipo": "MM"
+        },
+        {
+            "indicador": "Total E-commerce",
+            "valor": 8.0,
+            "meta": 9.1,
+            "valor_ly": 8.0,
+            "tipo": "MM"
+        }
+    ],
+    "TOP_OPERADORES": [
+        {
+            "operador": "TITTO MOTTA",
+            "faturado": 643530,
+            "meta": 642843,
+            "tickets": 1404
+        },
+        {
+            "operador": "TUTA E RUBINHO",
+            "faturado": 367172,
+            "meta": 403919,
+            "tickets": 711
+        },
+        {
+            "operador": "MAIRA SILVA",
+            "faturado": 335772,
+            "meta": 376024,
+            "tickets": 967
+        },
+        {
+            "operador": "ALEXANDRE SARAFIAN",
+            "faturado": 296486,
+            "meta": 249563,
+            "tickets": 638
+        },
+        {
+            "operador": "REVECA REGUEIRA",
+            "faturado": 275004,
+            "meta": 295149,
+            "tickets": 649
+        },
+        {
+            "operador": "ALBERI JUNIOR",
+            "faturado": 241408,
+            "meta": 295983,
+            "tickets": 505
+        },
+        {
+            "operador": "ALDESSON PORTO",
+            "faturado": 217230,
+            "meta": 314558,
+            "tickets": 625
+        },
+        {
+            "operador": "VALERIA FEIJO",
+            "faturado": 191288,
+            "meta": 249051,
+            "tickets": 466
+        },
+        {
+            "operador": "ROSIRIS M G M FARIAS",
+            "faturado": 185401,
+            "meta": 177083,
+            "tickets": 390
+        },
+        {
+            "operador": "GABRIEL CASA",
+            "faturado": 174719,
+            "meta": 185393,
+            "tickets": 360
+        }
+    ],
+    "HORA_HORA": [
+        {
+            "hora": "17:10",
+            "realizado": 6165740.0,
+            "meta": 7213258.0
+        },
+        {
+            "hora": "17:30",
+            "realizado": 6448929.0,
+            "meta": 7608548.0
+        },
+        {
+            "hora": "11:20",
+            "realizado": 1439736.0,
+            "meta": 1483892.0
+        },
+        {
+            "hora": "16:10",
+            "realizado": 5246948.0,
+            "meta": 6049397.0
+        },
+        {
+            "hora": "04:40",
+            "realizado": 96680.0,
+            "meta": 123088.0
+        },
+        {
+            "hora": "00:10",
+            "realizado": 13677.0,
+            "meta": 18381.0
+        },
+        {
+            "hora": "11:30",
+            "realizado": 1567154.0,
+            "meta": 1611316.0
+        },
+        {
+            "hora": "15:30",
+            "realizado": 4610156.0,
+            "meta": 5274361.0
+        },
+        {
+            "hora": "06:30",
+            "realizado": 133524.0,
+            "meta": 147271.0
+        },
+        {
+            "hora": "13:40",
+            "realizado": 3105868.0,
+            "meta": 3423604.0
+        },
+        {
+            "hora": "14:30",
+            "realizado": 3783898.0,
+            "meta": 4206765.0
+        },
+        {
+            "hora": "23:20",
+            "realizado": 6586691.0,
+            "meta": 11418561.0
+        },
+        {
+            "hora": "09:20",
+            "realizado": 472614.0,
+            "meta": 433617.0
+        },
+        {
+            "hora": "03:10",
+            "realizado": 84320.0,
+            "meta": 111821.0
+        },
+        {
+            "hora": "14:20",
+            "realizado": 3642219.0,
+            "meta": 4041035.0
+        },
+        {
+            "hora": "12:40",
+            "realizado": 2383137.0,
+            "meta": 2567798.0
+        },
+        {
+            "hora": "13:59",
+            "realizado": 3340860.0,
+            "meta": 3709165.0
+        },
+        {
+            "hora": "01:50",
+            "realizado": 72908.0,
+            "meta": 93096.0
+        },
+        {
+            "hora": "06:40",
+            "realizado": 139209.0,
+            "meta": 152152.0
+        },
+        {
+            "hora": "19:50",
+            "realizado": 6586691.0,
+            "meta": 9857934.0
+        },
+        {
+            "hora": "21:10",
+            "realizado": 6586691.0,
+            "meta": 10762103.0
+        },
+        {
+            "hora": "15:59",
+            "realizado": 5068926.0,
+            "meta": 5836443.0
+        },
+        {
+            "hora": "16:20",
+            "realizado": 5391111.0,
+            "meta": 6243873.0
+        },
+        {
+            "hora": "20:30",
+            "realizado": 6586691.0,
+            "meta": 10337349.0
+        },
+        {
+            "hora": "13:10",
+            "realizado": 2746946.0,
+            "meta": 2990463.0
+        },
+        {
+            "hora": "00:50",
+            "realizado": 51729.0,
+            "meta": 59817.0
+        },
+        {
+            "hora": "04:20",
+            "realizado": 93505.0,
+            "meta": 120651.0
+        },
+        {
+            "hora": "20:10",
+            "realizado": 6586691.0,
+            "meta": 10106848.0
+        },
+        {
+            "hora": "22:10",
+            "realizado": 6586691.0,
+            "meta": 11221000.0
+        },
+        {
+            "hora": "10:40",
+            "realizado": 1015057.0,
+            "meta": 1004327.0
+        },
+        {
+            "hora": "00:20",
+            "realizado": 23378.0,
+            "meta": 30370.0
+        },
+        {
+            "hora": "01:59",
+            "realizado": 75543.0,
+            "meta": 96312.0
+        },
+        {
+            "hora": "06:10",
+            "realizado": 121769.0,
+            "meta": 139351.0
+        },
+        {
+            "hora": "00:30",
+            "realizado": 36468.0,
+            "meta": 41562.0
+        },
+        {
+            "hora": "07:40",
+            "realizado": 201152.0,
+            "meta": 199440.0
+        },
+        {
+            "hora": "23:50",
+            "realizado": 6586691.0,
+            "meta": 11471137.0
+        },
+        {
+            "hora": "03:59",
+            "realizado": 91577.0,
+            "meta": 118166.0
+        },
+        {
+            "hora": "13:30",
+            "realizado": 2994386.0,
+            "meta": 3277626.0
+        },
+        {
+            "hora": "18:10",
+            "realizado": 6586691.0,
+            "meta": 8385216.0
+        },
+        {
+            "hora": "18:59",
+            "realizado": 6586691.0,
+            "meta": 9156529.0
+        },
+        {
+            "hora": "19:40",
+            "realizado": 6586691.0,
+            "meta": 9727632.0
+        },
+        {
+            "hora": "05:10",
+            "realizado": 106027.0,
+            "meta": 126681.0
+        },
+        {
+            "hora": "00:59",
+            "realizado": 58393.0,
+            "meta": 67032.0
+        },
+        {
+            "hora": "07:50",
+            "realizado": 218047.0,
+            "meta": 211614.0
+        },
+        {
+            "hora": "06:50",
+            "realizado": 144253.0,
+            "meta": 157467.0
+        },
+        {
+            "hora": "22:59",
+            "realizado": 6586691.0,
+            "meta": 11372584.0
+        },
+        {
+            "hora": "15:20",
+            "realizado": 4446271.0,
+            "meta": 5082288.0
+        },
+        {
+            "hora": "04:50",
+            "realizado": 102158.0,
+            "meta": 124212.0
+        },
+        {
+            "hora": "13:50",
+            "realizado": 3229186.0,
+            "meta": 3573573.0
+        },
+        {
+            "hora": "02:40",
+            "realizado": 80989.0,
+            "meta": 106496.0
+        },
+        {
+            "hora": "12:10",
+            "realizado": 2028798.0,
+            "meta": 2153796.0
+        },
+        {
+            "hora": "19:20",
+            "realizado": 6586691.0,
+            "meta": 9458840.0
+        },
+        {
+            "hora": "22:40",
+            "realizado": 6586691.0,
+            "meta": 11322668.0
+        },
+        {
+            "hora": "00:40",
+            "realizado": 43161.0,
+            "meta": 51224.0
+        },
+        {
+            "hora": "08:20",
+            "realizado": 276230.0,
+            "meta": 257829.0
+        },
+        {
+            "hora": "14:10",
+            "realizado": 3509643.0,
+            "meta": 3878194.0
+        },
+        {
+            "hora": "09:30",
+            "realizado": 517717.0,
+            "meta": 483779.0
+        },
+        {
+            "hora": "08:50",
+            "realizado": 350645.0,
+            "meta": 328165.0
+        },
+        {
+            "hora": "07:10",
+            "realizado": 165284.0,
+            "meta": 169859.0
+        },
+        {
+            "hora": "08:59",
+            "realizado": 377056.0,
+            "meta": 353867.0
+        },
+        {
+            "hora": "02:20",
+            "realizado": 78368.0,
+            "meta": 102488.0
+        },
+        {
+            "hora": "12:30",
+            "realizado": 2253427.0,
+            "meta": 2427690.0
+        },
+        {
+            "hora": "02:59",
+            "realizado": 81855.0,
+            "meta": 110090.0
+        },
+        {
+            "hora": "19:59",
+            "realizado": 6586691.0,
+            "meta": 9974909.0
+        },
+        {
+            "hora": "11:50",
+            "realizado": 1797032.0,
+            "meta": 1884864.0
+        },
+        {
+            "hora": "16:40",
+            "realizado": 5715396.0,
+            "meta": 6631743.0
+        },
+        {
+            "hora": "10:59",
+            "realizado": 1203615.0,
+            "meta": 1221759.0
+        },
+        {
+            "hora": "11:40",
+            "realizado": 1683327.0,
+            "meta": 1749047.0
+        },
+        {
+            "hora": "16:59",
+            "realizado": 6018008.0,
+            "meta": 7000075.0
+        },
+        {
+            "hora": "02:10",
+            "realizado": 76897.0,
+            "meta": 99538.0
+        },
+        {
+            "hora": "18:40",
+            "realizado": 6586691.0,
+            "meta": 8871448.0
+        },
+        {
+            "hora": "17:50",
+            "realizado": 6586691.0,
+            "meta": 8008707.0
+        },
+        {
+            "hora": "12:50",
+            "realizado": 2500662.0,
+            "meta": 2707729.0
+        },
+        {
+            "hora": "04:10",
+            "realizado": 93047.0,
+            "meta": 119562.0
+        },
+        {
+            "hora": "22:20",
+            "realizado": 6586691.0,
+            "meta": 11259041.0
+        },
+        {
+            "hora": "02:30",
+            "realizado": 78808.0,
+            "meta": 104790.0
+        },
+        {
+            "hora": "15:40",
+            "realizado": 4754161.0,
+            "meta": 5466161.0
+        },
+        {
+            "hora": "23:10",
+            "realizado": 6586691.0,
+            "meta": 11397089.0
+        },
+        {
+            "hora": "10:20",
+            "realizado": 811051.0,
+            "meta": 807609.0
+        },
+        {
+            "hora": "11:59",
+            "realizado": 1904742.0,
+            "meta": 2008433.0
+        },
+        {
+            "hora": "02:50",
+            "realizado": 81481.0,
+            "meta": 108323.0
+        },
+        {
+            "hora": "21:30",
+            "realizado": 6586691.0,
+            "meta": 10940717.0
+        },
+        {
+            "hora": "12:59",
+            "realizado": 2609220.0,
+            "meta": 2834329.0
+        },
+        {
+            "hora": "09:40",
+            "realizado": 572157.0,
+            "meta": 536864.0
+        },
+        {
+            "hora": "15:50",
+            "realizado": 4923998.0,
+            "meta": 5662523.0
+        },
+        {
+            "hora": "01:10",
+            "realizado": 61744.0,
+            "meta": 74185.0
+        },
+        {
+            "hora": "17:40",
+            "realizado": 6586691.0,
+            "meta": 7806368.0
+        },
+        {
+            "hora": "10:30",
+            "realizado": 912576.0,
+            "meta": 903539.0
+        },
+        {
+            "hora": "01:20",
+            "realizado": 63559.0,
+            "meta": 80479.0
+        },
+        {
+            "hora": "19:30",
+            "realizado": 6586691.0,
+            "meta": 9594981.0
+        },
+        {
+            "hora": "18:30",
+            "realizado": 6586691.0,
+            "meta": 8716078.0
+        },
+        {
+            "hora": "14:50",
+            "realizado": 4040003.0,
+            "meta": 4550060.0
+        },
+        {
+            "hora": "03:50",
+            "realizado": 90608.0,
+            "meta": 117240.0
+        },
+        {
+            "hora": "22:50",
+            "realizado": 6586691.0,
+            "meta": 11349934.0
+        },
+        {
+            "hora": "06:20",
+            "realizado": 125845.0,
+            "meta": 143094.0
+        },
+        {
+            "hora": "15:10",
+            "realizado": 4311094.0,
+            "meta": 4898071.0
+        },
+        {
+            "hora": "09:50",
+            "realizado": 618771.0,
+            "meta": 591394.0
+        },
+        {
+            "hora": "08:40",
+            "realizado": 322307.0,
+            "meta": 301549.0
+        },
+        {
+            "hora": "08:10",
+            "realizado": 251348.0,
+            "meta": 240549.0
+        },
+        {
+            "hora": "16:50",
+            "realizado": 5870002.0,
+            "meta": 6829504.0
+        },
+        {
+            "hora": "23:30",
+            "realizado": 6586691.0,
+            "meta": 11438103.0
+        },
+        {
+            "hora": "07:59",
+            "realizado": 236112.0,
+            "meta": 223168.0
+        },
+        {
+            "hora": "21:40",
+            "realizado": 6586691.0,
+            "meta": 11026248.0
+        },
+        {
+            "hora": "01:40",
+            "realizado": 70188.0,
+            "meta": 89345.0
+        },
+        {
+            "hora": "21:50",
+            "realizado": 6586691.0,
+            "meta": 11103844.0
+        },
+        {
+            "hora": "01:30",
+            "realizado": 67333.0,
+            "meta": 84827.0
+        },
+        {
+            "hora": "13:20",
+            "realizado": 2854713.0,
+            "meta": 3133133.0
+        },
+        {
+            "hora": "16:30",
+            "realizado": 5546381.0,
+            "meta": 6439837.0
+        },
+        {
+            "hora": "07:20",
+            "realizado": 176444.0,
+            "meta": 177971.0
+        },
+        {
+            "hora": "23:40",
+            "realizado": 6586691.0,
+            "meta": 11455272.0
+        },
+        {
+            "hora": "20:59",
+            "realizado": 6586691.0,
+            "meta": 10651440.0
+        },
+        {
+            "hora": "05:40",
+            "realizado": 111766.0,
+            "meta": 132017.0
+        },
+        {
+            "hora": "20:50",
+            "realizado": 6586691.0,
+            "meta": 10558705.0
+        },
+        {
+            "hora": "07:30",
+            "realizado": 191868.0,
+            "meta": 188410.0
+        },
+        {
+            "hora": "06:59",
+            "realizado": 154169.0,
+            "meta": 163039.0
+        },
+        {
+            "hora": "03:40",
+            "realizado": 88958.0,
+            "meta": 115557.0
+        },
+        {
+            "hora": "04:59",
+            "realizado": 103693.0,
+            "meta": 125278.0
+        },
+        {
+            "hora": "05:20",
+            "realizado": 106427.0,
+            "meta": 128147.0
+        },
+        {
+            "hora": "03:30",
+            "realizado": 88828.0,
+            "meta": 114502.0
+        },
+        {
+            "hora": "12:20",
+            "realizado": 2137870.0,
+            "meta": 2289497.0
+        },
+        {
+            "hora": "18:50",
+            "realizado": 6586691.0,
+            "meta": 9024369.0
+        },
+        {
+            "hora": "08:30",
+            "realizado": 300468.0,
+            "meta": 278688.0
+        },
+        {
+            "hora": "20:40",
+            "realizado": 6586691.0,
+            "meta": 10448808.0
+        },
+        {
+            "hora": "09:59",
+            "realizado": 668663.0,
+            "meta": 645630.0
+        },
+        {
+            "hora": "09:10",
+            "realizado": 411489.0,
+            "meta": 391490.0
+        },
+        {
+            "hora": "22:30",
+            "realizado": 6586691.0,
+            "meta": 11293338.0
+        },
+        {
+            "hora": "23:59",
+            "realizado": 6586691.0,
+            "meta": 11484802.0
+        },
+        {
+            "hora": "03:20",
+            "realizado": 88089.0,
+            "meta": 113131.0
+        },
+        {
+            "hora": "05:50",
+            "realizado": 115836.0,
+            "meta": 134403.0
+        },
+        {
+            "hora": "11:10",
+            "realizado": 1312667.0,
+            "meta": 1356921.0
+        },
+        {
+            "hora": "21:20",
+            "realizado": 6586691.0,
+            "meta": 10852422.0
+        },
+        {
+            "hora": "10:50",
+            "realizado": 1114681.0,
+            "meta": 1116731.0
+        },
+        {
+            "hora": "14:59",
+            "realizado": 4164886.0,
+            "meta": 4706233.0
+        },
+        {
+            "hora": "17:59",
+            "realizado": 6586691.0,
+            "meta": 8182015.0
+        },
+        {
+            "hora": "04:30",
+            "realizado": 96005.0,
+            "meta": 121869.0
+        },
+        {
+            "hora": "21:59",
+            "realizado": 6586691.0,
+            "meta": 11164757.0
+        },
+        {
+            "hora": "19:10",
+            "realizado": 6586691.0,
+            "meta": 9316451.0
+        },
+        {
+            "hora": "14:40",
+            "realizado": 3905110.0,
+            "meta": 4377632.0
+        },
+        {
+            "hora": "17:20",
+            "realizado": 6298025.0,
+            "meta": 7410871.0
+        },
+        {
+            "hora": "10:10",
+            "realizado": 739324.0,
+            "meta": 722592.0
+        },
+        {
+            "hora": "18:20",
+            "realizado": 6586691.0,
+            "meta": 8554308.0
+        },
+        {
+            "hora": "20:20",
+            "realizado": 6586691.0,
+            "meta": 10224969.0
+        },
+        {
+            "hora": "05:30",
+            "realizado": 108880.0,
+            "meta": 130170.0
+        },
+        {
+            "hora": "05:59",
+            "realizado": 117013.0,
+            "meta": 136482.0
+        }
+    ],
+    "fullprice_markdown": {
+        "indicadores": {
+            "Sellout_fp": 17177348,
+            "Sellout_fp_ly": 17628628,
+            "Sellout_md": 7104658,
+            "Sellout_md_ly": 6875794
+        },
+        "dias": [
+            {
+                "day": 3,
+                "fullprice": 6327114,
+                "markdown": 2662915
+            },
+            {
+                "day": 2,
+                "fullprice": 5842786,
+                "markdown": 2296167
+            },
+            {
+                "day": 1,
+                "fullprice": 5007449,
+                "markdown": 2145575
+            }
+        ]
+    }
+}

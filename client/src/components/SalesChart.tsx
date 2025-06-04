@@ -3,22 +3,32 @@ import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, ResponsiveContainer, Tooltip, Legend } from 'recharts';
 
-const data = [
-  { hora: '08:00', realizado: 12000, meta: 15000 },
-  { hora: '09:00', realizado: 18000, meta: 20000 },
-  { hora: '10:00', realizado: 25000, meta: 25000 },
-  { hora: '11:00', realizado: 32000, meta: 30000 },
-  { hora: '12:00', realizado: 28000, meta: 35000 },
-  { hora: '13:00', realizado: 22000, meta: 28000 },
-  { hora: '14:00', realizado: 35000, meta: 32000 },
-  { hora: '15:00', realizado: 42000, meta: 38000 },
-  { hora: '16:00', realizado: 38000, meta: 40000 },
-  { hora: '17:00', realizado: 45000, meta: 42000 },
-  { hora: '18:00', realizado: 52000, meta: 48000 },
-  { hora: '19:00', realizado: 48000, meta: 50000 },
-];
+// const data = [
+//   { hora: '08:00', realizado: 12000, meta: 15000 },
+//   { hora: '09:00', realizado: 18000, meta: 20000 },
+//   { hora: '10:00', realizado: 25000, meta: 25000 },
+//   { hora: '11:00', realizado: 32000, meta: 30000 },
+//   { hora: '12:00', realizado: 28000, meta: 35000 },
+//   { hora: '13:00', realizado: 22000, meta: 28000 },
+//   { hora: '14:00', realizado: 35000, meta: 32000 },
+//   { hora: '15:00', realizado: 42000, meta: 38000 },
+//   { hora: '16:00', realizado: 38000, meta: 40000 },
+//   { hora: '17:00', realizado: 45000, meta: 42000 },
+//   { hora: '18:00', realizado: 52000, meta: 48000 },
+//   { hora: '19:00', realizado: 48000, meta: 50000 },
+// ];
 
-export const SalesChart = () => {
+export const SalesChart = ({dataHoraHora}) => {
+
+  const data = dataHoraHora.sort((a, b) => {
+  const [horaA, minutoA] = a.hora.split(":").map(Number);
+  const [horaB, minutoB] = b.hora.split(":").map(Number);
+  return horaA !== horaB ? horaA - horaB : minutoA - minutoB;
+});
+
+  console.log('hora hora')
+  console.log(data)
+
   return (
     <Card className="bg-slate-800 border-slate-700">
       <CardHeader>

@@ -30,7 +30,7 @@ export const MetricsCard = ({ data }) => {
 
 
 
-            <p className="text-2xl font-bold text-white mb-2">R$ {data.valor}K</p>
+            <p className="text-2xl font-bold text-white mb-2">R$ {data.valor}{data.tipo}</p>
             <div className="flex items-center space-x-1">
               {progressPercentageLy >= 100 ? (
                 <TrendingUp className="h-4 w-4 text-emerald-500" />
@@ -48,7 +48,7 @@ export const MetricsCard = ({ data }) => {
           </div>
           <div>
 
-            <p className="text-1xl font-bold text-white mb-2">META R$ {data.meta}K</p>
+            <p className="text-1xl font-bold text-white mb-2">META R$ {data.meta}{data.tipo}</p>
             <div className="flex items-center space-x-1">
               {progressPercentageMeta >= 100 ? (
                 <TrendingUp className="h-4 w-4 text-emerald-500" />
