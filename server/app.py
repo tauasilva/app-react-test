@@ -79,7 +79,7 @@ def ReturnIndicadoresHoraHora() -> pd.DataFrame:
         return {"message": "ERROR"}
 
 
-def ReturnIndicadores() -> pd.DataFrame:
+def ReturnIndicadores_v2() -> pd.DataFrame:
     """Return KPIS """
 
 
@@ -98,6 +98,34 @@ def ReturnIndicadores() -> pd.DataFrame:
         sellout.refined.tb_fat_sellout_monitoria_dia_atual
         where dt_meta = current_date()
         group by all
+    '''
+
+    # Fetch the data
+    try:
+        # This example query depends on the nyctaxi data set in Unity Catalog, see https://docs.databricks.com/en/discover/databricks-datasets.html for details
+        data = sqlQuery(sql)
+        print(f"Data shape: {data.shape}")
+        print(f"Data columns: {data.columns}")
+
+        dados = data.astype(object).where(pd.notnull(data), None)
+
+        for col in dados.select_dtypes(include='object'):
+            dados[col] = dados[col].apply(lambda x: float(x) if isinstance(x, Decimal) else x)
+
+        dados = dados.to_dict(orient="records")
+        print(dados)
+        return JSONResponse(content=dados)      
+
+    except Exception as e:
+        print(f"An error occurred in querying data: {str(e)}")
+        return {"message": "ERROR"}
+
+def ReturnIndicadores() -> pd.DataFrame:
+    """Return KPIS """
+
+
+    sql = '''
+        Select * from main.zzdata.tb_fat_retorno_app
     '''
 
     # Fetch the data
@@ -140,17 +168,10 @@ def get_dados():
     return ReturnIndicadores()
 
 
-# Endpoint simples adicionado à sub-aplicação de API
-@api_app.get("/hello")
-def read_hello():
-    return {"message": "Hello, World!"}
-
-
-
 # PLEASE NOTE THE ORDER OF THE MOUNTS MATTERS
 
 app.mount("/api", api_app)
-app.mount("/", ui_app)
+app.mount("/", ui_app) # Aqui ele redireciona pro dist do react
 
 origins = [
     "http://localhost:3000",

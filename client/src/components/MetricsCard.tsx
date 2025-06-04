@@ -2,49 +2,67 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { TrendingUp, TrendingDown, LucideIcon } from 'lucide-react';
+import * as Icons from 'lucide-react';
 
-interface MetricsCardProps {
-  title: string;
-  value: string;
-  change: string;
-  changeType: 'increase' | 'decrease';
-  icon: LucideIcon;
-  gradient: string;
-}
 
-export const MetricsCard: React.FC<MetricsCardProps> = ({
-  title,
-  value,
-  change,
-  changeType,
-  icon: Icon,
-  gradient
-}) => {
+export const MetricsCard = ({ data }) => {
+
+  // "indicador": "Sell Out Dia",
+  // "valor": 4.4,
+  // "meta": 4.3,
+  // "valor_ly": 4.7,
+  // "icon": "CircleDollarSign",
+  // "gradient": "gradient-mint"
+
+
+  const progressPercentageMeta = (data.valor / data.meta) * 100;
+  const progressPercentageLy = (data.valor / data.valor_ly) * 1
+
+  const Icon = Icons[data.icon] || Icons.HelpCircle;
   return (
     <Card className="bg-slate-800 border-slate-700 hover:bg-slate-750 transition-all duration-300 group">
       <CardContent className="p-6">
+        
+        <p className="text-slate-400 text-1xl font-medium mb-2">{data.indicador}</p>
         <div className="flex items-center justify-between">
           <div className="flex-1">
-            <p className="text-slate-400 text-sm font-medium mb-2">{title}</p>
-            <p className="text-2xl font-bold text-white mb-2">{value}</p>
+            
+
+
+
+            <p className="text-2xl font-bold text-white mb-2">R$ {data.valor}K</p>
             <div className="flex items-center space-x-1">
-              {changeType === 'increase' ? (
+              {progressPercentageLy >= 100 ? (
                 <TrendingUp className="h-4 w-4 text-emerald-500" />
               ) : (
                 <TrendingDown className="h-4 w-4 text-red-500" />
               )}
-              <span 
-                className={`text-sm font-medium ${
-                  changeType === 'increase' ? 'text-emerald-500' : 'text-red-500'
-                }`}
+              <span
+                className={`text-sm font-medium ${progressPercentageLy >= 100 ? 'text-emerald-500' : 'text-red-500'
+                  }`}
               >
-                {change}
+                {progressPercentageLy.toFixed(1)}%
               </span>
-              <span className="text-slate-400 text-sm">Meta</span>
+              <span className="text-slate-400 text-sm">LY</span>
             </div>
           </div>
-          <div className={`${gradient} p-3 rounded-xl group-hover:scale-110 transition-transform duration-300`}>
-            <Icon className="h-6 w-6 text-white" />
+          <div>
+
+            <p className="text-1xl font-bold text-white mb-2">META R$ {data.meta}K</p>
+            <div className="flex items-center space-x-1">
+              {progressPercentageMeta >= 100 ? (
+                <TrendingUp className="h-4 w-4 text-emerald-500" />
+              ) : (
+                <TrendingDown className="h-4 w-4 text-red-500" />
+              )}
+              <span
+                className={`text-sm font-medium ${progressPercentageMeta >= 100 ? 'text-emerald-500' : 'text-red-500'
+                  }`}
+              >
+                {progressPercentageMeta.toFixed(1)}%
+              </span>
+              <span className="text-slate-400 text-sm">LY</span>
+            </div>
           </div>
         </div>
       </CardContent>
