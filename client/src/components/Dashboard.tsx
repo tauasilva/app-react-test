@@ -31,7 +31,8 @@ const Dashboard = () => {
       try {
         const response = await fetch(`https://app-react-test-3879198595418316.aws.databricksapps.com/api/dados`);
         const data = await response.json();
-        setKpis(data[0]);
+        console.log(data)
+        setKpis(data);
       } catch (error) {
         console.error('Erro ao buscar os KPIs:', error);
         const data = dataExample
