@@ -81,7 +81,7 @@ const Dashboard = () => {
         <div className="mb-8">
           <h2 className="text-xl font-semibold mb-6 text-white">Performance por Marca</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            {dataExample.MARCAS.map((brand, index) => (
+            {kpis.MARCAS.map((brand, index) => (
               <BrandCard data={brand} />
             ))}
           </div>
@@ -101,7 +101,7 @@ const Dashboard = () => {
 
         {/* Metrics Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-8">
-          {dataExample.INDICADORES_GERAIS.map((metric, index) => (
+          {kpis.INDICADORES_GERAIS.map((metric, index) => (
             <MetricsCard data={metric} />
           ))}
         </div>
@@ -119,10 +119,10 @@ const Dashboard = () => {
 
 
         {/* Price Analysis */}
-        <PriceAnalysis data={dataExample.fullprice_markdown} />
+        <PriceAnalysis data={kpis.fullprice_markdown} />
 
         {/* Products Table */}
-        <DataTable data={dataExample.TOP_OPERADORES} />
+        <DataTable data={kpis.TOP_OPERADORES} />
       </main>
     </div>
   );
