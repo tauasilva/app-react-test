@@ -4,6 +4,7 @@ from fastapi import Depends, FastAPI
 from pydantic import BaseModel, ValidationError
 import os
 import pandas as pd
+import json
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from databricks.sdk import WorkspaceClient
