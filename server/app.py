@@ -138,7 +138,7 @@ def ReturnIndicadores() -> pd.DataFrame:
 
 
         data["json_dict"] = data["json"].apply(json.loads)
-        dados = df_return["json_dict"][0]
+        dados = data["json_dict"][0]
 
         # dados = data.astype(object).where(pd.notnull(data), None)
 
