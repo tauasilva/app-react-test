@@ -135,13 +135,17 @@ def ReturnIndicadores() -> pd.DataFrame:
         print(f"Data shape: {data.shape}")
         print(f"Data columns: {data.columns}")
 
-        dados = data.astype(object).where(pd.notnull(data), None)
 
-        for col in dados.select_dtypes(include='object'):
-            dados[col] = dados[col].apply(lambda x: float(x) if isinstance(x, Decimal) else x)
+        data["json_dict"] = data["json"].apply(json.loads)
+        dados = df_return["json_dict"][0]
 
-        dados = dados.to_dict(orient="records")
-        print(dados)
+        # dados = data.astype(object).where(pd.notnull(data), None)
+
+        # for col in dados.select_dtypes(include='object'):
+        #     dados[col] = dados[col].apply(lambda x: float(x) if isinstance(x, Decimal) else x)
+
+        # dados = dados.to_dict(orient="records")
+        # print(dados)
         return JSONResponse(content=dados)      
 
     except Exception as e:
