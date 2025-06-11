@@ -176,7 +176,7 @@ def get_dados():
 # PLEASE NOTE THE ORDER OF THE MOUNTS MATTERS
 
 app.mount("/api", api_app)
-app.mount("/", ui_app) # Aqui ele redireciona pro dist do react
+app.mount("/", ui_app) # Aqui ele redireciona pro dist do react dohas
 
 origins = [
     "http://localhost:3000",
