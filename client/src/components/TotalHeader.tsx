@@ -29,7 +29,7 @@ export const TotalHeader = ({ data }) => {
             <div className="mb-8">
               <div className="flex items-center justify-between mb-6  text-white">
                 <div>
-                  <h2 className="text-xl font-semibold mb-2">SELL OUT D-1</h2>
+                  <h2 className="text-xl font-semibold mb-2">SELL OUT TODAY</h2>
                 </div>
               </div>
             </div>
